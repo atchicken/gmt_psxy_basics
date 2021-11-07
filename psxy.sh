@@ -46,7 +46,7 @@ data2Range=1/5/0/100
 data2Base=a1g1/a20f10:"y2":E
 gmt psxy $txtData -R$range -B$base -Jx -W1,$lineColor -P -K > $img
 gmt psxy $txtData -R -B -J -Sc0.2 -G$circleColor -K -O >> $img
-gmt psxy $csvData -R$data2Range -B$data2Base -Jx1/0.1 -W1,$data2Color -K -O >> $img
+gmt psxy $csvData -R$data2Range -B$data2Base -Jx3/0.2 -W1,$data2Color -P -K -O >> $img
 gmt psxy $csvData -R -B -J -St0.2 -G$data2Color -O >> $img
 gmt ps2raster $img -Tg -E100
 
@@ -56,10 +56,10 @@ gmt ps2raster $img -Tg -E100
 img=./img/test7.ps
 frameColor=0/0/255
 backColor=#FFFFFF
-legRange=1/9.5/1/1.2
-gmt psxy $txtData -R$range -B$base -Jx -W1,$lineColor -P -K > $img
+legRange=1/18.5/1/1.2
+gmt psxy $txtData -R$range -B$base -Jx3/2 -W1,$lineColor -P -K > $img
 gmt psxy $txtData -R -B -J -Sc0.2 -G$circleColor -K -O >> $img
-gmt psxy $csvData -R$data2Range -B$data2Base -Jx1/0.1 -W1,$data2Color -K -O >> $img
+gmt psxy $csvData -R$data2Range -B$data2Base -Jx3/0.2 -W1,$data2Color -P -K -O >> $img
 gmt psxy $csvData -R -B -J -St0.2 -G$data2Color -K -O >> $img
 gmt pslegend -R -J -Dx$legRange -F+p1,blue+gwhite -O <<EOF >> $img
 S 0 c 0.2 green black 0.2 y
